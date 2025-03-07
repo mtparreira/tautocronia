@@ -36,7 +36,7 @@ public class DBpgsql {
 
     HibernateJpaVendorAdapter va = new HibernateJpaVendorAdapter();
     va.setGenerateDdl(true);
-    va.setShowSql(true);
+    va.setShowSql(false);
     em.setJpaVendorAdapter(va);
 
     return em;

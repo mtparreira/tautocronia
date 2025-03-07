@@ -19,7 +19,7 @@ public class BibliotecaSRV {
 
   public void gerarLivros() {
     List<LivrosEP> livros = new ArrayList<>();
-    for (int i = 1; i <= 1000; i++) {
+    for (int i = 1; i <= 100000; i++) {
       livros.add(new LivrosEP(null, "Livro " + i, "Autor " + i, 2000 + i));
     }
     bibliotecaRP.saveAll(livros);
@@ -27,7 +27,7 @@ public class BibliotecaSRV {
 
   public void transferirLivros() {
     List<LivrosEP> livrosEP = bibliotecaRP.findAll();
-    Integer totalBatch = 100;
+    Integer totalBatch = 10000;
     for (Integer i = 0; i < livrosEP.size(); i += totalBatch) {
       List<LivrosEM> registros =
           livrosEP.subList(i, Math.min(i + totalBatch, livrosEP.size())).stream()
